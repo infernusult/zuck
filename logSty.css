@@ -1,0 +1,45 @@
+
+* {
+    box-sizing: border-box
+  }
+
+body 
+{
+    background-color: rgb(113, 43, 226);
+}
+
+.loginForm
+{
+    width: 500px;
+    margin: 0 auto;
+
+    margin-top: 10px;
+
+    background-color: rgb(255, 255, 255) ;
+
+    border: 2px solid #fff8dc;
+
+    padding: 15px;
+    padding-top: 5px;
+}
+
+.title
+{
+    text-align: center;
+    text-transform: uppercase;
+    color: seagreen;
+    margin-bottom: 5px;
+}
+
+#form-control
+{
+    display: block;
+    width: 100%;
+    height: 20px;
+    
+    margin: 2px;
+    margin-bottom: 15px;
+
+    background-color: #fff;
+    
+}

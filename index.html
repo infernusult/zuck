@@ -1,32 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./zen.png" type="image/x-icon">
-    <title>Login | The Solution</title>
+	<meta charset="utf-8">
+	<title>Zuck.</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="Assets/Images/zen.png" type="image/x-icon">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">  
+	<link rel="stylesheet" href="CSS/main.css">
+	<link rel="stylesheet" href="CSS/login.css">
 </head>
+
 <body>
-    <div class="loginForm">
+	<div id="login_page">
+		<!-- Login sidebar -->
+		<div id="login_dialog">
+			<!-- Login header -->
+			<div id="login_header">
+				<div id="login_heading">Zuck.</div>
+				<div id="login_subheading">Log In, Zunt</div>
+			</div>
 
-        <p class="title">WELCOME</p>
-        <form action="./home.html" method="post">
+			<!-- Login form -->
+			<div id="login_form_container">
+				<form id="login_form" action="home.html" method="post">
+					<input type="email" placeholder="User Id">
+					<input type="password" name="password" placeholder="Password">
+					<input type="button" value="Enter">
+				</form>
+			</div>
 
-            <input type= "email" name="emailID" placeholder="  Please enter your userID" class="formControl" id="emailID">
+			<!-- Password reset link -->
+			<div id="forgot_password">
+				<a href="#">Forgot password</a>
+			</div>
+		</div>	
 
-            <input type= "password" name="pass" placeholder="  Please enter your password" class="formControl" id="passID">
-
-            <input type= "button" value="Enter" id="submitBtn">
-
-            <a href="#" id="forgotPass" >Forgot Password?</a>
-
-        </form>
-    </div>
-
-    <link rel="stylesheet" href= "logSty.css">    
-
+		<!-- Login feature image -->
+		<div id="login_feature_image"></div>
+	</div>
 </body>
-<script src="./login.js"></script>
-        
+		
 </html>

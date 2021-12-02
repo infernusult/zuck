@@ -65,8 +65,8 @@ function plsDecrypt (str)
 }
 
 // Onclick button event for login
-var Btn = document.getElementById("submitBtn");
-Btn.onclick = function credCheck ()
+var submit = document.getElementById("submitBtn");
+submit.onclick = function credCheck ()
 {
     console.log("Button Clicked");
     var emailID = document.getElementById("emailID").value;

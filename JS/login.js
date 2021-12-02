@@ -1,41 +1,86 @@
-console.log("freckin 'ell m8, tha thang be workin doe");
 
-var correctUserID = "raj.saketh@sahs.com";
-var correctPass = "hodchem123";
+// Data that will be stored in database
+var correctUserID = `\u007f\u0080s=\u0081um~Jq|lqfw1lbr`;
+var correctPass = `<:8sjlffph`;
 
-function convertHash() {
+// Function to encrypt strings
+function plsEncrypt(str)
+{
+    let encoded = "";
 
+    for (let i = 0; i < str.length; i++) 
+{
+    let cc = str[i].charCodeAt(0);
+
+    let convValue = cc + i;
+
+    if (convValue > 255)
+    {
+        convValue -= 256;
+    }
+    encoded += String.fromCharCode(convValue);
 }
-String.prototype.hashCode = function () {
-  var hash = 0, i, chr;
-  if (correctUserID.length === 0) return hash;
-  for (i = 0; i < correctUserID.length; i++) {
-    chr = correctUserID.charCodeAt(i);
-    hash = ((hash << 5) - hash) + chr;
-    hash |= 0; // Convert to 32bit int
-  }
-  return hash;
-};
 
+    let newstr = "";
 
+    for (let j = encoded.length - 1; j >= 0; j--)
+    {
+        let revChar = encoded.charAt(j);
+        newstr += revChar;
+    }
+    encoded = newstr;
 
-//   var x = String.prototype.hashCode
-console.log(String.prototype.hashCode());
+    return encoded;
+}
 
-var Btn = document.getElementById("submitBtn");
-Btn.onclick = function credCheck() {
-  console.log("Button Clicked");
-  var emailID = document.getElementById("emailID").value;
-  var password = document.getElementById("passID").value;
+// Decrypt that shit
+function plsDecrypt (str)
+{
+    let decoded = "";
+    let newstr = "";
 
-  if (emailID === correctUserID) {
-    // console.log(correctUserID, emailID);
-    // console.log(password, correctPass);
-    if (password === correctPass) {
-      window.location.href = "file:///home/ayman/Documents/Stuff/Documents/School_Docs/C5_Computer_Science-HL/IA/Solution/HTML/home.html";
+    for (let j = str.length - 1; j >= 0; j--)
+    {
+        let revChar = str.charAt(j);
+        newstr += revChar;
     }
 
-  }
+    str = newstr;
 
-  alert("Email or Password incorrect.");
+    for (let i = 0; i < str.length; i++)
+    {
+        let cc = str[i].charCodeAt(0);
+    
+        let convValue = cc - i;
+
+        if (convValue < 0)
+        {
+            convValue = 256 - convValue;
+        }
+
+        decoded += String.fromCharCode(convValue);
+    }
+
+    return decoded;
+}
+
+// Onclick button event for login
+var Btn = document.getElementById("submitBtn");
+Btn.onclick = function credCheck ()
+{
+    console.log("Button Clicked");
+    var emailID = document.getElementById("emailID").value;
+    var password = document.getElementById("passID").value;
+    
+    let encryptedUID = plsEncrypt(emailID);
+    let encryptedPID = plsEncrypt(password);
+
+    if (encryptedEID === correctUserID){
+        if(encryptedPID === correctPass){
+            window.location.href = "file:///home/ayman/Documents/Stuff/Documents/School_Docs/C5_Computer_Science-HL/IA/Solution/HTML/home.html";
+        }
+
+    }
+
+    alert("Email or Password incorrect.");
 }

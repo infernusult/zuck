@@ -3,6 +3,9 @@
 	--cultured: #F8F8F8ff;
 	--light-grey: #CCCCCCff;
 	--metallic-seaweed: #248099ff;
+	--phthalo-green: #0A210F;
+	--black-olive: #41463D;
+
 }
 
 body, html {
@@ -17,7 +20,7 @@ body, html {
 }
 
 a {
-	color: var(--metallic-seaweed);
+	color: var(--black-olive);
 }
 
 input {
@@ -28,7 +31,7 @@ input {
 input[type="text"], input[type="email"], input[type="password"] {
 	padding: 0.7em;
 	border-radius: 0.5em;
-	border: 2px solid var(--metallic-seaweed);
+	border: 2px solid var(--black-olive);
 }
 
 input[type="button"], button {
@@ -37,12 +40,12 @@ input[type="button"], button {
 	font-weight: 600;
 	border-radius: 0.5em;
 	color: var(--cultured);
-	background-color: var(--metallic-seaweed);
-	border: 2px solid var(--metallic-seaweed);
+	background-color: var(--black-olive);
+	border: 2px solid var(--black-olive);
 	transition: 0.2s ease;
 }
 
 input[type="button"]:hover {
 	background-color: white;
-	color: var(--metallic-seaweed);
+	color: var(--black-olive);
 }
